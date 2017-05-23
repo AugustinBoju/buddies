@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :user_interests
   has_many :interests, through: :user_interests
 
-  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, :email, presence: true
 end
