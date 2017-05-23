@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :user_interests
   has_many :interests, through: :user_interests
+
+  validates :first_name, :last_name, presence: true
 end
