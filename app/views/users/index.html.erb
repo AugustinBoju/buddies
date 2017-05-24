@@ -1,8 +1,16 @@
-<h1>users#index</h1>
+<%= link_to "↩ home 🏡", root_path %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <h1>users#index</h1>
+        <% @users.each do |user| %>
+        <br>
+          <%= link_to "#{user.first_name}", user_path(user) %>, <%= user.age %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to "home", root_path %>
-<% @users.each do |user| %>
-  <br>
-  <%= link_to "#{user.first_name}", user_path(user) %>
-<% end %>
 
