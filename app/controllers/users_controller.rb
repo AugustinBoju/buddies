@@ -3,9 +3,8 @@ class UsersController < ApplicationController
 
   def index
     selected_interest_ids = params[:search].select { |k, v| v == "true" }.keys.map(&:to_i)
-    @users = User.where.not(id: current_user.id)
     if selected_interest_ids.empty?
-      @users = User.all
+      @users = User.where.not(id: current_user.id)
     else
       @users = User.all.selected_interest_ids
     end
