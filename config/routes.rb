@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :users, only: [:index, :show] do
     resources :requests, only: [:create], shallow:true
-    resources :user_interests, only: [:create]
   end
+  resources :user_interests, only: [:create]
   resources :requests, only: [:index, :update], shallow:true
 end
