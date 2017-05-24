@@ -1,29 +1,26 @@
 class RequestsController < ApplicationController
 
-  def new
-    @request = Request.new
-  end
+  # def new
+  #   @request = Request.new
+  # end
 
   def create
-    @sender = current_user
-    @request = Request.new(requests_params)
-    @receiver = User.find(params[:receiver_id])
-    @request.receiver = @receiver
-    @request.sender = current_user
+    sender = current_user
+    @user = User.find(params[:user_id])
+    @request = Request.new(sender: sender, receiver: @user)
     if @request.save
-      redirect_to requests_path(@requests)
+      redirect_to requests_path
     else
       render "users/show"
     end
   end
 
   def index
-    @requests = current_user.requests
   end
 
-  private
+  # private
 
-  def requests_params
-    params.require(:request).permit(:sender_id, :receiver_id)
-  end
+  # def requests_params
+  #   params.require(:request).permit(:sender_id, :receiver_id)
+  # end
 end
