@@ -18,4 +18,18 @@ class User < ApplicationRecord
   def to_s
     "#{first_name} #{last_name[0]}."
   end
+
+  def self.filter(current_user, selected_interest_ids)
+    if selected_interest_ids.empty?
+      self.where
+          .not(id: current_user)
+          .uniq
+    else
+      self.where
+          .not(id: current_user)
+          .joins(:interests)
+          .where('interests.id IN (?)', selected_interest_ids)
+          .uniq
+    end
+  end
 end
