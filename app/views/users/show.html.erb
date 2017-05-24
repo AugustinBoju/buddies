@@ -1,4 +1,7 @@
 <h1>show</h1>
 <%= link_to "back to index", users_path %>
-<%= @user.first_name  %>
+<br>
+<%= @user.first_name %>, <%= @user.age %>
+<%= @user.description %>
+</div>
 <%= render 'requests/new', user: @user, request: @request %>
