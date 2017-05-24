@@ -1,5 +1,3 @@
-<h1>requests#index</h1>
-<% current_user.requests.each do |request| %>
-  <br>
-  <%= request.sender == current_user ? "I request #{request.receiver}" : "Notification from #{request.sender}"  %>
-<% end %>
+<h1>profil#index</h1>
+<%= render 'requests/requests/index' %>
+<%= render 'requests/notifications/index' %>

@@ -1,0 +1,10 @@
+<h1>Requests</h1>
+<% current_user.requests.each do |request| %>
+  <% if request.sender == current_user %>
+  <br>
+    <%= "You request #{request.receiver}" %>
+    <span>
+        <%= "--- #{request.status.to_s} ---" %>
+    </span>
+  <% end %>
+<% end %>

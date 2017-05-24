@@ -18,9 +18,18 @@ class RequestsController < ApplicationController
   def index
   end
 
-  # private
+  def update
+    #find request
+    @request = Request.find(params[:id])
+    #update status
+    @request.update(requests_params)
+    #redirect request index
+    redirect_to requests_path
+  end
 
-  # def requests_params
-  #   params.require(:request).permit(:sender_id, :receiver_id)
-  # end
+  private
+
+  def requests_params
+    params.require(:request).permit(:sender_id, :receiver_id, :status)
+  end
 end

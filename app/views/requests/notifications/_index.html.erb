@@ -1,0 +1,14 @@
+<h1>Notifications</h1>
+<% current_user.requests.each do |request| %>
+  <% if request.receiver == current_user %>
+  <br>
+    <%= "Notification from #{request.sender}" %>
+    <% if request.pending? %>
+      <%= render "requests/notifications/edit", request: request %>
+    <% else %>
+      <span>
+        <%= "--- #{request.status.to_s} ---" %>
+      </span>
+    <% end %>
+  <% end %>
+<% end %>

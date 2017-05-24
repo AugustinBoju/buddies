@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     resources :requests, only: [:create], shallow:true
   end
-  resources :requests, only: [:index], shallow:true
+  resources :requests, only: [:index, :update], shallow:true
 end
