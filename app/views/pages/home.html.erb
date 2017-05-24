@@ -2,5 +2,11 @@
 <p> Connect nomads </p>
 
 <div class="form-homepage">
-  <%= render 'user_interests/new' %>
+<%= simple_form_for :search, url: users_path, method: :get do |f| %>
+  <% @interests.each do | interest | %>
+    <%= f.input interest.id, as: :boolean, checked_value: true, unchecked_value: false %>
+  <% end %>
+
+  <%= f.button :submit, class: "btn btn-success" %>
+<% end %>
 </div>
