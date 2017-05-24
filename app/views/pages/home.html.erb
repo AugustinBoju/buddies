@@ -1,5 +1,12 @@
 <h1> Paper Plane </h1>
 <p> Connect nomads </p>
 
+<div class="form-homepage">
+<%= simple_form_for :search, url: users_path, method: :get do |f| %>
+  <% @interests.each do | interest | %>
+    <%= f.input interest.id, as: :boolean, checked_value: true, unchecked_value: false %>
+  <% end %>
 
-<%= link_to "users#index", users_path, {class: "btn btn-primary"} %>
+  <%= f.button :submit, class: "btn btn-success" %>
+<% end %>
+</div>
