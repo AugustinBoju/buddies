@@ -1,0 +1,9 @@
+<%= simple_form_for [current_user, UserInterest.new] do |f| %>
+  <%= f.association :interest, as: :check_boxes %>
+  <% @interests.each do | interest | %>
+    <%# f.input interest.id, as: :boolean, checked_value: true, unchecked_value: false %>
+  <% end %>
+
+
+  <%= f.button :submit, class: "btn btn-success" %>
+<% end %>
