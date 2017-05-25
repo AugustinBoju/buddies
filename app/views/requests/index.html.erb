@@ -1,11 +1,14 @@
-<h1>Hello <%= current_user.first_name %> <%= current_user.last_name %></h1>
-<h1>My dashboard</h1>
+<div class="container">
+  <h1>Hello <%= current_user.first_name %></h1>
+  <h1>My dashboard</h1>
 
-
-<h2>Your interests</h2>
-<li><ol><% @interests.each do |interest| %>
-          <%= interest.name %>
-        <% end  %>
-</ol></li>
-<%= render 'requests/requests/index' %>
-<%= render 'requests/notifications/index' %>
+  <div class="interests">
+    <h2>Your interests</h2>
+    <% @interests.each do |interest| %>
+      <br>
+      <%= interest.name %>
+    <% end  %>
+  </div>
+  <%= render 'requests/requests/index' %>
+  <%= render 'requests/notifications/index' %>
+</div>
