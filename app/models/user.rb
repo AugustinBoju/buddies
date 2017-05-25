@@ -10,6 +10,9 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :email, presence: true
 
+  geocoded_by :current_city
+  after_validation :geocode, if: :current_city_changed?
+
 
   def requests
     sent_requests + received_requests
