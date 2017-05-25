@@ -4,6 +4,7 @@
     <div class="row">
       <div class="col-xs-12 col-md-4">
         <h1>users#index</h1>
+        J'ai choisi : <%= @interests.pluck(:name).join(', ') %>
         <% @users.each do |user| %>
         <br>
           <%= link_to "#{user.first_name}", user_path(user) %>, <%= user.age %>
