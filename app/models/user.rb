@@ -13,6 +13,13 @@ class User < ApplicationRecord
   geocoded_by :current_city
   after_validation :geocode, if: :current_city_changed?
 
+  def create_user_interests(interest_ids)
+    if interest_ids
+      interest_ids.each do |interest_id|
+        self.user_interests.create(interest_id: interest_id)
+      end
+    end
+  end
 
   def requests
     sent_requests + received_requests

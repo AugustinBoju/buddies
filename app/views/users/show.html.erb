@@ -4,4 +4,12 @@
 <%= @user.first_name %>, <%= @user.age %>
 <%= @user.description %>
 </div>
-<%= render 'requests/new', user: @user, request: @request %>
+
+<% if user_signed_in?  && @receive_notication %>
+  <%= render 'requests/notifications/index' %>
+<% elsif user_signed_in? && @send_request %>
+  <%= render 'requests/requests/index' %>
+<% else %>
+  <%= render 'requests/new', user: @user, request: @request %>
+<% end %>
+
