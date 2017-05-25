@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.filter(current_user, get_selected_interest_ids)
+    @interests = Interest.where("id IN (?)", get_selected_interest_ids)
   end
 
   def show
@@ -19,9 +20,9 @@ class UsersController < ApplicationController
 
   def get_selected_interest_ids
     if current_user.present?
-      current_user.interest_ids
+      @my_data = current_user.interest_ids
     else
-      session[:selected_interest_ids].map(&:to_i)
+      @my_data = session[:selected_interest_ids].map(&:to_i)
     end
   end
 end
