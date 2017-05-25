@@ -1,8 +1,9 @@
 puts 'Cleaning database'
 Request.destroy_all
-Interest.destroy_all
 UserInterest.destroy_all
+Interest.destroy_all
 User.destroy_all
+
 puts 'Cleaning database done'
 puts 'Creating users'
 user0 = User.create!(email: "test@test.com", password: "totototo", first_name: "Test", last_name: "Test", age: 100, description: "Addict au sport, j'aime me défouler dans l'eau et / ou en rando, je recherche l'adrénaline avant tout et des compagnons de voyage dans ce même del de tarés mentaux :p")
