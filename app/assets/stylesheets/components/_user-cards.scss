@@ -1,0 +1,18 @@
+.btn-medium {
+  color: #FFE24F;
+  border: 2px solid #FFE24F;
+  padding: 10px 15px;
+  border-radius: 50px;
+  // font-weight: lighter;
+  opacity: 0.6;
+  font-size: 18px;
+}
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #FFE24F;
+}
+
+.padded-user-cards {
+  padding: 10px;
+}

@@ -1,16 +1,17 @@
-<%= link_to "↩ home 🏡", root_path %>
 <div class="wrapper">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-4">
-        <h1>users#index <%= @users.count %></h1>
-        J'ai choisi : <%= @interests.pluck(:name).join(', ') %>
+        <h1>Buddies who look like me</h1>
+        <h2>J'ai choisi : <%= @interests.pluck(:name).join(', ') %></h2>
         <% @users.each do |user| %>
         <br>
-          <%= link_to "#{user.first_name}", user_path(user) %>, <%= user.age %>
+        <div class="padded-user-cards">
+        <%= link_to "#{user.first_name}, #{user.age}", user_path(user), class: "btn-medium btn-medium:hover"%>
+        </div>
         <% end %>
       </div>
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-12 col-md-6">
         <div id="map" style="width: 100%; height: 600px;"></div>
       </div>
       <% content_for(:after_js) do %>
