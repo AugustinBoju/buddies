@@ -14,9 +14,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @receive_notication = Request.find_by(receiver_id: current_user.id, sender_id: @user.id)
-    @send_request = Request.find_by(sender_id: current_user.id, receiver_id: @user.id)
     @request = Request.new
+    if user_signed_in?
+      @receive_notication = Request.find_by(receiver_id: current_user.id, sender_id: @user.id)
+      @send_request = Request.find_by(sender_id: current_user.id, receiver_id: @user.id)
+    end
   end
 
   private
