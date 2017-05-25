@@ -3,8 +3,13 @@ class UsersController < ApplicationController
   before_action :load_session, only: [:index]
 
   def index
-    @users = User.filter(current_user, get_selected_interest_ids)
+    @users = User.filter(current_user, get_selected_interest_ids).where.not(latitude: nil, longitude: nil)
     @interests = Interest.where("id IN (?)", get_selected_interest_ids)
+
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+    end
   end
 
   def show
