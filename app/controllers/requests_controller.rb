@@ -16,6 +16,11 @@ class RequestsController < ApplicationController
   end
 
   def index
+    @interests = current_user.interests
+  end
+
+  def to_s
+    name
   end
 
   def update
