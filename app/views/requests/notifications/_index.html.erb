@@ -2,12 +2,12 @@
 <% current_user.requests.each do |request| %>
   <% if request.receiver == current_user %>
   <br>
-    <%= "From #{request.sender}" %>
+    <p>From <%= link_to "#{request.sender}", user_path(request.sender) %>
     <% if request.pending? %>
       <%= render "requests/notifications/edit", request: request %>
     <% else %>
-      <span>
-        <%= "--- #{request.status.to_s} ---" %>
+      <span></p>
+        <%= "- #{request.status.to_s} -" %>
       </span>
     <% end %>
   <% end %>

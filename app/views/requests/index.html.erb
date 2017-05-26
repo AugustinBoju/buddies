@@ -2,6 +2,7 @@
 <%= render 'shared/flashes' %>
 <div class="container">
   <div class="text-center">
+
     <h1>Hello <%= current_user.first_name %></h1>
     <h1>My dashboard</h1>
 
@@ -14,5 +15,11 @@
     </div>
     <%= render 'requests/requests/index' %>
     <%= render 'requests/notifications/index' %>
+  </div>
+  <div class="text-left">
+      <%= link_to 'Back to index', users_path(@users) %>
+  </div>
+  <div class="text-right">
+    <h2><%= link_to "Edit my profile", edit_user_registration_path(current_user) %></h2>
   </div>
 </div>
