@@ -1,6 +1,3 @@
-<%= render 'shared/navbar' %>
-<%= render 'shared/flashes' %>
-
 <div class="user-container">
   <h1><%= @user.first_name %></h1>
   <h2><%= @user.age %> ans</h2>
@@ -29,5 +26,4 @@
     </div>
   </div>
 </div>
-
-  <%= link_to "Back to index", users_path %>
+<%= link_to "Back to index", users_path %>
