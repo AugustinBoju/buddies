@@ -1,15 +1,18 @@
-<div class="wrapper">
+<div class="wrapper padded">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <h1>Buddies who look like me</h1>
-        <h2>J'ai choisi : <%= @interests.pluck(:name).join(', ') %></h2>
-        <% @users.each do |user| %>
-        <br>
-        <div class="padded-user-cards">
-        <%= link_to "#{user.first_name}, #{user.age}", user_path(user), class: "btn-medium btn-medium:hover"%>
+      <div class="col-xs-12 col-md-6">
+        <div class="card-users-listing">
+          <h1 class="titles">BUDDIES WHO LOOK LIKE ME</h1>
+          <h2 class="titles">I love: <%= "#{@interests.pluck(:name).join(', ').downcase}"%></h2>
+          <p><%= link_to 'Edit interests', root_path%></p>
+          <% @users.each do |user| %>
+          <br>
+          <div class="padded-user-cards">
+          <%= link_to "#{user.first_name}, #{user.age}", user_path(user), class: "btn-medium btn-medium:hover"%>
+          </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
       <div class="col-xs-12 col-md-6">
         <div id="map" style="width: 100%; height: 600px;"></div>
