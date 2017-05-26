@@ -1,7 +1,6 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/flashes' %>
 <h1>show</h1>
-<%= link_to "back to index", users_path %>
 <br>
 <%= @user.first_name %>, <%= @user.age %>
 <%= @user.description %>
@@ -14,4 +13,4 @@
 <% else %>
   <%= render 'requests/new', user: @user, request: @request %>
 <% end %>
-
+<%= link_to "Back to index", users_path %>
