@@ -9,13 +9,19 @@
     letter-spacing: 2.5px;
     text-align: center;
     margin-bottom: 20px;
-    color: #949494;
+    color: black;
     text-transform: uppercase;
     border-bottom: 1px solid #eee;
-}
 
-h1 {
-   letter-spacing: 2.5px;
+  h1 {
+     letter-spacing: 2.5px;
+  }
+
+  p {
+    letter-spacing: 2.5px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 50px;
+  }
 }
 
 #submit-interests {
@@ -29,4 +35,18 @@ h1 {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
+  h1 {
+    margin: 50px;
+  }
+
+   p {
+    letter-spacing: 2.5px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 50px;
+  }
+}
+
+.btn_home {
+  margin-bottom: 50px;
 }

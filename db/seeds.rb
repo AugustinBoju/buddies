@@ -22,7 +22,7 @@ puts 'Creating interests...'
 
 hiking = Interest.create!(name: "Hiking")
 surf = Interest.create!(name: "Surf")
-nightlife = Interest.create!(name: "Night Life")
+wildlife = Interest.create!(name: "Wild Life")
 yoga = Interest.create!(name: "Yoga")
 beach = Interest.create!(name: "Beach")
 mountains = Interest.create!(name: "Mountains")
@@ -42,7 +42,7 @@ user_interests = [
   },
   {
     user_id: user0.id,
-    interest_id: nightlife.id
+    interest_id: wildlife.id
   },
   {
     user_id: user0.id,
@@ -75,7 +75,7 @@ user_interests = [
   },
   {
     user_id: user3.id,
-    interest_id: nightlife.id
+    interest_id: wildlife.id
   },
   {
     user_id: user4.id,

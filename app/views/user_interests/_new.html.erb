@@ -2,11 +2,9 @@
 
   <%= f.collection_check_boxes :interest_id, Interest.all[0..3], :id, :name do |interest| %>
     <label class="card-interest-wrapper">
-
       <%= interest.check_box %>
-
       <%#= cl_image_url interest.object.picture.path %>
-      <div class="card-interest" style=" background-image: url(<%= "https://unsplash.it/200/300?image=#{rand(1..100)}"%>)">
+      <div class="card-interest" style=" background-image: url(<%= set_image_for_checkbox(interest.text)%>)">
         <h2 class="card-interest-name">
           <%= interest.text %>
         </h2>
@@ -14,8 +12,8 @@
     </label>
   <% end %>
   <div id="submit-interests">
-    <p>What do you love ?</p>
-    <%= f.button :submit, class: "btn btn-success"%>
+    <p> WHAT DO YOU LOVE ?</p>
+    <%= f.button :submit, class: "btn_home btn-info"%>
   </div>
   <%= f.collection_check_boxes :interest_id, Interest.all[4..7], :id, :name do |interest| %>
     <label class="card-interest-wrapper">
@@ -23,7 +21,7 @@
       <%= interest.check_box %>
 
       <%#= cl_image_url interest.object.picture.path %>
-      <div class="card-interest" style="background-image: url(<%= "https://unsplash.it/200/300?image=#{rand(1..100)}"  %>)">
+      <div class="card-interest" style="background-image: url(<%= set_image_for_checkbox(interest.text)%>)">
         <h2 class="card-interest-name">
           <%= interest.text %>
         </h2>
