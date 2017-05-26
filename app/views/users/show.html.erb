@@ -1,16 +1,33 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/flashes' %>
-<h1>show</h1>
-<br>
-<%= @user.first_name %>, <%= @user.age %>
-<%= @user.description %>
+
+<div class="user-container">
+  <h1><%= @user.first_name %></h1>
+  <h2><%= @user.age %> ans</h2>
+
+  <%= image_tag 'http://www.ruralagriventures.com/wp-content/uploads/2017/05/man-team.jpg', height: 300, width: 300 %>
+
+  <div class="user-card">
+    <br>
+    <h3> Description </h3>
+    <%= @user.description %>
+    <br>
+
+    <p class="card-text"><small class="text-muted">Suscribed in January 2017</small></p>
+
+
+
+    <div class="button-request">
+      <% if user_signed_in?  && @receive_notication %>
+        <%= render 'requests/notifications/index' %>
+      <% elsif user_signed_in? && @send_request %>
+        <%= render 'requests/requests/index' %>
+      <% else %>
+        <%= render 'requests/new', user: @user, request: @request %>
+      <% end %>
+      <br>
+    </div>
+  </div>
 </div>
 
-<% if user_signed_in?  && @receive_notication %>
-  <%= render 'requests/notifications/index' %>
-<% elsif user_signed_in? && @send_request %>
-  <%= render 'requests/requests/index' %>
-<% else %>
-  <%= render 'requests/new', user: @user, request: @request %>
-<% end %>
-<%= link_to "Back to index", users_path %>
+  <%= link_to "Back to index", users_path %>
