@@ -1,5 +1,6 @@
 <%= simple_form_for :user_interest,  url: user_interests_path(), method: :post do |f| %>
 
+
   <%= f.collection_check_boxes :interest_id, Interest.all[0..3], :id, :name do |interest| %>
     <label class="card-interest-wrapper">
       <%= interest.check_box %>
@@ -12,8 +13,9 @@
     </label>
   <% end %>
   <div id="submit-interests">
+    <h1> PAPER PLANE </h1>
     <p> WHAT DO YOU LOVE ?</p>
-    <%= f.button :submit, class: "btn_home btn-info"%>
+    <%= f.button :submit, 'Connect nomads', class: "btn_home btn-info"%>
   </div>
   <%= f.collection_check_boxes :interest_id, Interest.all[4..7], :id, :name do |interest| %>
     <label class="card-interest-wrapper">
