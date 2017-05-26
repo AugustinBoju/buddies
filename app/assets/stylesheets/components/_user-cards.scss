@@ -16,3 +16,21 @@
 .padded-user-cards {
   padding: 10px;
 }
+
+.user-container {
+  margin-left: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+  border-bottom: 1px solid #eee;
+
+  h1 {
+    border-bottom: 1px solid #eee;
+    letter-spacing: 2.5px;
+    color: #FFE24F;
+
+  }
+}
