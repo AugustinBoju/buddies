@@ -1,8 +1,8 @@
-<h3>Notifications</h3>
+<h3>My notifications</h3>
 <% current_user.requests.each do |request| %>
   <% if request.receiver == current_user %>
   <br>
-    <%= "Notification from #{request.sender}" %>
+    <%= "From #{request.sender}" %>
     <% if request.pending? %>
       <%= render "requests/notifications/edit", request: request %>
     <% else %>
