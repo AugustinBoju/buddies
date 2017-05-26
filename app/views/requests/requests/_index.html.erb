@@ -2,9 +2,9 @@
 <% current_user.requests.each do |request| %>
   <% if request.sender == current_user %>
   <br>
-    <%= "To #{request.receiver}" %>
+    <p>To <%= link_to "#{request.receiver}", user_path(request.receiver) %>
     <span>
-        <%= "--- #{request.status.to_s} ---" %>
-    </span>
+        <%= "- #{request.status.to_s} -" %>
+    </span></p>
   <% end %>
 <% end %>
