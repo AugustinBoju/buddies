@@ -17,9 +17,9 @@
 
     <div class="button-request">
       <% if user_signed_in?  && @receive_notication %>
-        <%= render 'requests/notifications/index' %>
+        <%= render 'requests/notifications/index', requests: current_user.requests %>
       <% elsif user_signed_in? && @send_request %>
-        <%= render 'requests/requests/index' %>
+        <%= render 'requests/requests/index', requests: current_user.requests %>
       <% else %>
         <%= render 'requests/new', user: @user, request: @request %>
       <% end %>

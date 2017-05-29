@@ -1,11 +1,11 @@
 <container class="user-container">
-  <h3>My Requests</h3>
-  <% current_user.requests.each do |request| %>
+  <!-- <h3>My Requests</h3> -->
+  <% requests.each do |request| %>
     <% if request.sender == current_user %>
-    <br>
+      <br>
       <p>To <%= link_to "#{request.receiver}", user_path(request.receiver) %>
       <span>
-          <%= "- #{request.status.to_s} -" %>
+          <%= "#{request.status.to_s}" %>
       </span></p>
     <% end %>
   <% end %>

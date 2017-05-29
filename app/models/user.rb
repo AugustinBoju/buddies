@@ -21,8 +21,12 @@ class User < ApplicationRecord
     end
   end
 
-  def requests
-    sent_requests + received_requests
+  def requests(status=nil)
+    if status.present?
+      sent_requests.where(status: status) + received_requests.where(status: status)
+    else
+      sent_requests + received_requests
+    end
   end
 
   def to_s

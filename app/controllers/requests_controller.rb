@@ -16,7 +16,8 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @interests = current_user.interests
+    @user = current_user
+    @interests = @user.interests
   end
 
   def to_s
