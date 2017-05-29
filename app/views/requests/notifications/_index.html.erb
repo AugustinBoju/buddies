@@ -1,7 +1,7 @@
-<h3>My notifications</h3>
-<% current_user.requests.each do |request| %>
+<!-- <h3>My notifications</h3> -->
+<% requests.each do |request| %>
   <% if request.receiver == current_user %>
-  <br>
+    <br>
     <p>From <%= link_to "#{request.sender}", user_path(request.sender) %>
     <% if request.pending? %>
       <%= render "requests/notifications/edit", request: request %>
