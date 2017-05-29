@@ -1,13 +1,88 @@
 .card-users-listing {
-  border: 2px solid;
-  border-color: #333;
+  // border-color: #333;
   // border-radius: 10px;
-  padding: 0px 18px 30px 20px;
-  width: 480px
+  // padding: 0px 18px 30px 20px;
+  // width: 480px;
+  // background: #F4F4F4;
+  // border-radius: 5px;
+}
+
+.container_style {
+  letter-spacing: 2.5px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -0.5px;
+  margin-bottom: 25px;
+  vertical-align: middle !important;
+  box-sizing: border-box;
+
+  h1 {
+    border-bottom: 1px solid #eee;
+  }
 }
 
 .card-users-listing p a {
   color: #333;
   // text-decoration: none;
   font-size: 13px;
+}
+
+.card-users-avatar {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid #FFE24F;
+}
+
+.test-users-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 5px solid #FFE24F;
+  position: absolute;
+  top: 15%;
+  left: calc(50% - 40px);
+}
+
+.test-card {
+  color:white;
+  // width : 80%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 2px solid #FFE24F;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.test-card-top {
+  height: 35%;
+  width: 100%;
+  border-bottom: 1px solid white;
+  background-position: center center;
+  background-size: cover;
+  filter: blur(4px);
+  overflow: hidden;
+  box-shadow: inset 0 0 10px 0 rgba(0,0,0,0.5);
+  border-bottom: 1px;
+}
+
+.test-card-bottom {
+  background-color: white;
+  height: 65%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.btn-medium:hover {
+  opacity: 1;
+}
+
+.btn-user-listing {
+  margin-top: 15px;
 }

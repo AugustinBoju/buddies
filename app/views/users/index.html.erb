@@ -2,16 +2,22 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        <div class="card-users-listing">
-          <h1 class="titles">BUDDIES WHO LOOK LIKE ME</h1>
-          <h2 class="titles">I love: <%= "#{@interests.pluck(:name).join(', ').downcase}"%></h2>
-          <p><%= link_to 'Edit interests', root_path%></p>
-          <% @users.each do |user| %>
-          <br>
-          <div class="padded-user-cards">
-          <%= link_to "#{user.first_name}, #{user.age}", user_path(user), class: "btn-medium btn-medium:hover"%>
+        <div class="container_style">
+          <div class="text-center">
+            <h1 class="titles">BUDDIES WHO LOOK LIKE ME</h1>
+            <h2 class="titles"><kbd>I love: </kbd></h2>
+            <p><%= "#{@interests.pluck(:name).join(', ').downcase}"%></p>
+            <p><%= link_to 'Edit interests', root_path%></p>
           </div>
-          <% end %>
+        </div>
+        <div class="card-users-listing">
+          <div class="row">
+            <% @users.each do |user| %>
+              <div class="col-xs-12 col-md-6">
+                <%= render "test-card", user: user %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
       <div class="col-xs-12 col-md-6">
