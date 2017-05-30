@@ -41,6 +41,14 @@
           </ul>
         </div>
       </div>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">
+      <div class="badge-container">
+        <i class="fa fa-envelope-o"></i>
+        <% if current_user.received_requests.pending.size > 0 %>
+          <div class="badge badge-blue"><%= current_user.received_requests.pending.size %></div>
+        <% end %>
+      </div>
+    </a>
 
     <% else %>
 
