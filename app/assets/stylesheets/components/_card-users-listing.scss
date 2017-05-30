@@ -11,12 +11,21 @@
   letter-spacing: 2.5px;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: -0.5px;
-  margin-bottom: 25px;
+  // margin-bottom: 25px;
   vertical-align: middle !important;
   box-sizing: border-box;
+  padding: 1px;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+  margin-bottom: 15px;
+
 
   h1 {
-    border-bottom: 1px solid #eee;
+    color: white;
+    text-transform: uppercase;
+    // border-bottom: 1px solid #eee;
   }
 }
 
