@@ -8,5 +8,9 @@
           <%= "#{request.status.to_s}" %>
       </span></p>
     <% end %>
+
+    <% if request.accepted? %>
+      <%= link_to "Chat video", request_path(request) %>
+    <% end %>
   <% end %>
 </container>

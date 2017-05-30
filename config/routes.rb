@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :requests, only: [:create], shallow:true
   end
   resources :user_interests, only: [:create]
-  resources :requests, only: [:index, :update], shallow:true
+  resources :requests, only: [:index, :show, :update], shallow:true
 end
