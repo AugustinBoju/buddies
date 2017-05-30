@@ -5,3 +5,7 @@
 //= require gmaps/google
 //= require_tree .
 
+$( ".tab" ).click(function() {
+  $('.active').removeClass('active');
+  $(this).addClass('active');
+});

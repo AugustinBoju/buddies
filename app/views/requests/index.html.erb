@@ -1,28 +1,38 @@
- <!-- #link_to 'Back to index', users_path(@users) -->
+<%= link_to 'Back to index', users_path(@users) %>
 <div class="container">
   <div class="row">
     <div class="text-center">
       <!-- <h1>Hello <%= current_user.first_name %></h1> -->
-      <div class="requests-filter col-xs-12 col-sm-8">
+      <div class="requests-filter col-xs-12 col-sm-6 col-sm-offset-3">
         <h1>My Requests</h1>
         <div class="tabs" role="tablist">
-          <a class="tab active" href="#pending" data-toggle="tab">
-            <h3>35</h3>
+          <a class="tab active nav-link" href="#pending" data-toggle="tab" role="tab">
+            <h3><%= @user.sent_requests.pending.count %></h3>
             <p>Pending</p>
           </a>
-          <a class="tab" href="#accepted" data-toggle="tab">
-            <h3>15</h3>
+          <a class="tab nav-link" href="#accepted" data-toggle="tab" role="tab">
+            <h3><%= @user.sent_requests.accepted.count + @user.received_requests.accepted.count %></h3>
             <p>Accepted</p>
           </a>
-          <a class="tab" href="#refused" data-toggle="tab">
-            <h3>189</h3>
+          <a class="tab" href="#refused" data-toggle="tab" role="tab">
+            <h3><%= @user.sent_requests.refused.count + @user.received_requests.refused.count %></h3>
             <p>Refused</p>
           </a>
         </div>
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="pending">
-            <%= render "requests/requests/index", requests: @user.sent_requests.pending %>
-            <%= render "requests/notifications/index", requests: @user.received_requests.pending %>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                <%= render "requests/requests/index", requests: @user.sent_requests.pending %>
+                  </td>
+                  <td>
+                <%= render "requests/notifications/index", requests: @user.received_requests.pending %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div role="tabpanel" class="tab-pane" id="accepted">
             <%= render "requests/requests/index", requests: @user.sent_requests.accepted %>
@@ -34,15 +44,11 @@
           </div>
         </div>
       </div>
-
-
-      <div class="interests col-xs-12 col-sm-4">
-<!--         <h1>I love</h1> -->
-        <h2 class="titles">I love: <%= "#{@interests.pluck(:name).join(', ').downcase}"%></h2>
-          <p><%= link_to 'Edit interests', root_path%></p>
-      </div>
     </div>
   </div>
 </div>
+
+
+
 
 
