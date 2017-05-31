@@ -16,7 +16,7 @@
     </form>
 
     <!-- Different navigation if login or not -->
-    <%= link_to t(".top_call_to_action", default: "My profile"), requests_path, class: "btn btn-info" %>
+    <%= link_to t(".top_call_to_action", default: "Dashboard"), requests_path, class: "btn btn-danger" %>
     <% if user_signed_in? %>
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
