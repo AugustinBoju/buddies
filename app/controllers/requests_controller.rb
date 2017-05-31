@@ -20,6 +20,10 @@ class RequestsController < ApplicationController
     @interests = @user.interests
   end
 
+  def show
+    @request = Request.find(params[:id])
+  end
+
   def to_s
     name
   end
