@@ -9,6 +9,7 @@ class RequestsController < ApplicationController
     @user = User.find(params[:user_id])
     @request = Request.new(sender: sender, receiver: @user)
     if @request.save
+      # TODO: send sms to @user
       redirect_to requests_path
     else
       render "users/show"
@@ -32,7 +33,12 @@ class RequestsController < ApplicationController
     #find request
     @request = Request.find(params[:id])
     #update status
+
     @request.update(requests_params)
+
+    if @request.accepted?
+      # TODO: send sms to @request.sender
+    end
     #redirect request index
     redirect_to requests_path
   end
