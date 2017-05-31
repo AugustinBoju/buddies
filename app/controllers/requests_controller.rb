@@ -29,8 +29,14 @@ class RequestsController < ApplicationController
   def show
     @request = Request.find(params[:id])
     @conversation = Conversation.between(@request.sender, @request.receiver).first
-    @messages = @conversation.messages
-    @new_message = @conversation.messages.build
+    if @conversation
+      @messages = @conversation.messages
+      @new_message = @conversation.messages.build
+    else
+      @conversation = Conversation.create!(sender: @request.sender, recipient:  @request.receiver)
+      @messages = @conversation.messages
+      @new_message = @conversation.messages.build
+    end
   end
 
   def to_s
