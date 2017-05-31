@@ -7,8 +7,8 @@
   <div class="user-card">
     <br>
     <h3> Description </h3>
-  <p><%= @user.interests.pluck(:name).join(', ') %></p>
-   <p><%= @user.description %></p>
+    <p><kbd><%= "#{@user.interests.join(', ').downcase}"%><kbd></p>
+    <p><%= @user.description %></p>
     <br>
 
     <p class="card-text"><small class="text-muted">Suscribed in January 2017</small></p>

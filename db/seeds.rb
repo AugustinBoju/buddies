@@ -206,6 +206,17 @@ beach = Interest.create!(name: "Beach")
 mountains = Interest.create!(name: "Mountains")
 photography = Interest.create!(name: "Photography")
 natural_park = Interest.create!(name: "Natural Park")
+cities = Interest.create!(name: "Cities")
+jungle = Interest.create!(name: "Jungle")
+ocean = Interest.create!(name: "Ocean")
+waterfall = Interest.create!(name: "Waterfalls")
+spirituality = Interest.create!(name: "Spirituality")
+bivouac = Interest.create!(name: "Bivouac")
+canyon = Interest.create!(name: "Canyon")
+roadtrip = Interest.create!(name: "Roadtrip")
+snorkeling = Interest.create!(name: "Snorkelling")
+stop = Interest.create!(name: "Hitchhike")
+
 
 puts 'Creating users interests'
 

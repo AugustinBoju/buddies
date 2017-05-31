@@ -1,38 +1,39 @@
-<div class="wrapper">
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'background.jpg' %>);">
+
+
+
+<div class="user-index-container">
+
+  <div class="user-index-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'background.jpg' %>);">
+
     <div class="banner-content">
       <h1>Discover your travel crushs</h1>
       <span class=""><kbd>I love:</kbd> <%= "#{@interests.pluck(:name).join(', ').downcase}"%></span>
       <br>
       <p><%= link_to 'Edit interests', root_path%></p>
     </div>
+
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <div class="container_style">
-         <!--  <div class="text-center">
-            <h1 class="titles"> Discover your travel crushs</h1>
-              <div class="d-inline">
-                <span class="titles"><kbd>I love:</kbd> <%= "#{@interests.pluck(:name).join(', ').downcase}"%></span>
-              </div>
-            <p><%= link_to 'Edit interests', root_path%></p>
-          </div> -->
-        </div>
-        <div class="card-users-listing">
-          <div class="row">
-            <% @users.each do |user| %>
-              <div class="col-xs-6 col-md-4">
-                <%= render "test-card", user: user %>
-              </div>
-            <% end %>
-          </div>
+
+  <div class="user-index-bottom">
+    <div class="user-index-left">
+      <div class="card-users-listing">
+        <div class="row">
+          <% @users.each do |user| %>
+            <div class="col-xs-6 col-md-4">
+              <%= render "test-card", user: user %>
+            </div>
+          <% end %>
         </div>
       </div>
-      <div class="col-xs-12 col-md-6">
-        <div id="map" style="width: 125%; height: 512px;"></div>
-      </div>
-      <% content_for(:after_js) do %>
+    </div>
+    <div class="user-index-right">
+      <div id="map"></div>
+    </div>
+  </div>
+
+</div>
+
+<% content_for(:after_js) do %>
         <script>
           $(document).ready(function() {
             var handler = Gmaps.build('Google');
@@ -48,9 +49,7 @@
             });
           });
         </script>
-      <% end %>
-    </div>
-  </div>
-</div>
+<% end %>
+
 
 

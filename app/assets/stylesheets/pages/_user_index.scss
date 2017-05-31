@@ -1,0 +1,63 @@
+
+.user-index-container {
+  height: 100vh;
+  width: 100%;
+}
+
+.user-index-banner {
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35%;
+  width: 100%;
+  background-color: red;
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+   h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  }
+
+  p {
+  font-size: 15px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+  justify-content: center;
+  }
+}
+
+.user-index-bottom {
+  height: 65%;
+  width: 100%;
+  display: flex;
+}
+
+.user-index-right {
+  height: 100%;
+  width: 40%;
+}
+
+
+.user-index-left {
+  min-height: 100%;
+  width: 60%;
+  overflow-y: scroll;
+  padding: 30px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
