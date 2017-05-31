@@ -39,6 +39,7 @@ class RequestsController < ApplicationController
     if @request.accepted?
       # TODO: send sms to @request.sender
     end
+
     #redirect request index
     redirect_to requests_path
   end
