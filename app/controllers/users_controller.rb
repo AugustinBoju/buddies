@@ -13,6 +13,10 @@ class UsersController < ApplicationController
     end
   end
 
+    def to_s
+    name
+  end
+
   def show
     @user = User.find(params[:id])
     @request = Request.new
