@@ -4,4 +4,4 @@ Twilio.configure do |config|
 end
 
 
-@client.messages.create(from: ENV['twilio_number'], to: '+33650858793', body: 'Apo arrête de faire la gueule!')
+# @client.messages.create(from: ENV['twilio_number'], to: '+33650858793', body: 'Apo arrête de faire la gueule!')
