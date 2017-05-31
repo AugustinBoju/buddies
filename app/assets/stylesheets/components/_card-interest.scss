@@ -13,7 +13,22 @@
   }
 
   input[type="checkbox"]:checked + .card-interest {
-    box-shadow: inset 0 0 30px black;
+    box-shadow: inset 0 0 1000px 70px rgba(255, 226, 79, 0.4);;
+  }
+
+
+
+   input[type="checkbox"]:checked + .card-interest .heart-icon {
+    opacity: 1;
+  }
+
+
+  .heart-icon {
+    opacity: 0;
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    color: white;
   }
 
   .card-interest-name {
