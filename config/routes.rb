@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   end
   resources :user_interests, only: [:create]
   resources :requests, only: [:index, :show, :update], shallow:true
+  resources :conversations do
+    resources :messages
+  end
 end

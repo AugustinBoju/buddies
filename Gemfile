@@ -21,6 +21,7 @@ gem "coffee-rails"
 gem "gmaps4rails"
 gem 'cloudinary'
 gem 'twilio-ruby', '~> 4.11', '>= 4.11.1'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass', branch: 'v1.0beta'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
