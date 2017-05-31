@@ -23,6 +23,9 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @conversation = Conversation.between(@request.sender, @request.receiver).first
+    @messages = @conversation.messages
+    @new_message = @conversation.messages.build
   end
 
   def to_s

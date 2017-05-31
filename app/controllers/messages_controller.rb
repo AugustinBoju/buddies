@@ -26,10 +26,10 @@ class MessagesController < ApplicationController
   end
 
   def create
+    @messages = @conversation.messages
     @message = @conversation.messages.new(message_params)
-    if @message.save
-      redirect_to conversation_messages_path(@conversation)
-    end
+    @message.save
+    @new_message = @conversation.messages.build
   end
 
   private
