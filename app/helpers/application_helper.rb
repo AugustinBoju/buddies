@@ -22,6 +22,20 @@ module ApplicationHelper
       image_path 'interests/photo.jpg'
     when "natural park"
       image_path 'interests/naturalpark.jpg'
+    when "cities"
+      image_path 'interests/cities.jpg'
+    when "jungle"
+      image_path 'interests/jungle.jpg'
+    when "ocean"
+      image_path 'interests/ocean.jpg'
+    when "spirituality"
+      image_path 'interests/spirituality.jpg'
+    when "bivouac"
+      image_path 'interests/bivouac.jpg'
+    when "canyon"
+      image_path 'interests/canyon.jpg'
+
+
 
     else
       "https://unsplash.it/200/300?image=#{rand(1..100)}"

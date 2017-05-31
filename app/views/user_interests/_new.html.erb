@@ -30,6 +30,19 @@
       </div>
     </label>
   <% end %>
+  <%= f.collection_check_boxes :interest_id, Interest.all[8..10], :id, :name do |interest| %>
+    <label class="card-interest-wrapper">
+
+      <%= interest.check_box %>
+
+      <%#= cl_image_url interest.object.picture.path %>
+      <div class="card-interest" style="background-image: url(<%= set_image_for_checkbox(interest.text)%>)">
+        <h2 class="card-interest-name">
+          <%= interest.text %>
+        </h2>
+      </div>
+    </label>
+  <% end %>
 <% end %>
 
 
