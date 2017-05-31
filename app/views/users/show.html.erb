@@ -1,30 +1,30 @@
 <div class="user-container">
-  <h1><%= @user.first_name %></h1>
-  <h2><%= @user.age %> ans</h2>
+  <h1>More about <%= @user.first_name %></h1>
+    <h2><%= @user.age %> ans</h2>
 
-  <%= image_tag @user.picture, height: 300, width: 300 %>
+  <div>
+    <%= image_tag @user.picture, height: 300, width: 300, class: "avatar-large" %>
+  </div>
 
   <div class="user-card">
+    <h3><%= @user.first_name %> <%= @user.last_name %> <strong><%= @user.age %></strong></h3>
     <br>
     <h3> Description </h3>
     <p><kbd><%= "#{@user.interests.join(', ').downcase}"%><kbd></p>
     <p><%= @user.description %></p>
     <br>
-
     <p class="card-text"><small class="text-muted">Suscribed in January 2017</small></p>
+  </div>
 
-
-
-    <div class="button-request">
-      <% if user_signed_in?  && @receive_notication %>
-        <%= render 'requests/notifications/index', requests: current_user.requests %>
-      <% elsif user_signed_in? && @send_request %>
-        <%= render 'requests/requests/index', requests: current_user.requests %>
-      <% else %>
-        <%= render 'requests/new', user: @user, request: @request %>
-      <% end %>
-      <br>
-    </div>
+  <div class="button-request">
+    <% if user_signed_in?  && @receive_notication %>
+      <%= render 'requests/notifications/index', requests: current_user.requests %>
+    <% elsif user_signed_in? && @send_request %>
+      <%= render 'requests/requests/index', requests: current_user.requests %>
+    <% else %>
+      <%= render 'requests/new', user: @user, request: @request %>
+    <% end %>
+    <br>
   </div>
 </div>
 <%= link_to "Back to index", users_path %>
