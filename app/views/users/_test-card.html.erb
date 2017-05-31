@@ -2,8 +2,13 @@
   <div class="test-card-top" style="background-image: linear-gradient(-225deg, rgba(255, 226, 79,0.1) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path user.picture %>)">
   </div>
   <div class="test-card-bottom">
-
+    <div class="align-center">
     <%= link_to "#{user.first_name}, #{user.age}", user_path(user), class: "btn-medium btn-user-listing"  %>
     <%= image_tag user.picture, class: "test-users-avatar" %>
+     <div class="align-center">
+    <p><%= user.current_city %></p>
+    <%= image_tag "globe.png", class: "globe-avatar"%>
+    </div>
+    </div>
   </div>
 </div>

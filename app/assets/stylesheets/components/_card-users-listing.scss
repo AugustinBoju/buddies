@@ -48,22 +48,41 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 5px solid #FFE24F;
+  border: 5px solid #78BBE6;
   position: absolute;
   top: 15%;
   left: calc(50% - 40px);
 }
 
+.globe-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 75%;
+  left: calc(50% - 30px);
+}
+
 .test-card {
   color:white;
   // width : 80%;
-  height: 200px;
+  height: 230px;
   display: flex;
   flex-direction: column;
   position: relative;
-  border: 2px solid #FFE24F;
+  border: 2px solid #78BBE6;
   border-radius: 5px;
   margin-bottom: 15px;
+
+  p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color:black;
+    // position: absolute;
+    top: 50%;
+    text-align: center;
+    margin-top: 10px;
+  }
 }
 
 .test-card-top {
@@ -94,4 +113,5 @@
 
 .btn-user-listing {
   margin-top: 15px;
+  border: 2px solid #78BBE6;
 }
