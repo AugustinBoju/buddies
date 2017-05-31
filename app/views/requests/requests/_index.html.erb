@@ -1,4 +1,4 @@
-<container class="user-container">
+<div class="user-container">
   <!-- <h3>My Requests</h3> -->
   <% requests.each do |request| %>
     <% if request.sender == current_user %>
@@ -13,4 +13,4 @@
       <%= link_to "Chat video", request_path(request) %>
     <% end %>
   <% end %>
-</container>
+</div>

@@ -10,6 +10,10 @@ class UserInterestsController < ApplicationController
     redirect_to users_path
   end
 
+  def to_s
+    name
+  end
+
 private
 
   def interest_ids

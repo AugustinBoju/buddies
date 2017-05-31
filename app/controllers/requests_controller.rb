@@ -49,6 +49,7 @@ class RequestsController < ApplicationController
         body: '👫🌎✈TRAVEL CRUSH - Check your dashboard, you have a new travel crush!'
       )
     end
+
     #redirect request index
     redirect_to requests_path
   end
