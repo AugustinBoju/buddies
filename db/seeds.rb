@@ -23,7 +23,7 @@ user1 = User.create!(email: "apolline@gmail.com",
   age: 28,
   current_city: "Sao Paulo",
   description: "Addict au sport, j'aime me défouler dans l'eau et / ou en rando, je recherche l'adrénaline avant tout et des compagnons de voyage dans ce même del de tarés mentaux :p",
-  picture: "apo.jpeg")
+  picture: "apo.jpg")
 user2 = User.create!(email: "augustin@gmail.com",
   password: "totototo",
   first_name: "Augustin",
@@ -32,7 +32,7 @@ user2 = User.create!(email: "augustin@gmail.com",
   age: 21,
   current_city: "Paris",
   description: "Je n'ai jamais voyagé et j'aimerai tenter cette aventure en compagnie d'une ou plusieurs personnes partageant les mêmes envies. Je ne suis pas très regardant sur la destination, partant pour n'importe quel continent !",
-  picture: "augustin.jpeg")
+  picture: "augustin.jpg")
 user3 = User.create!(email: "manon@gmail.com",
   password: "totototo",
   first_name: "Manon",
@@ -41,7 +41,7 @@ user3 = User.create!(email: "manon@gmail.com",
   age: 24,
   current_city: "Berlin",
   description: "Après la découverte de l'Asie du sud-est et de l'Amérique du Sud j'ai envie de découvrir d'autres horizons. J'aime bien manger et j'aime l'humour.",
-  picture: "manon.jpeg")
+  picture: "manon.jpg")
 user4 = User.create!(email: "bertrand@gmail.com",
   password: "totototo",
   first_name: "Bertrand",
@@ -77,7 +77,7 @@ user7 = User.create!(email: "charles@gmail.com",
   age: 29,
   current_city: "Capo Verde",
   description: "Jaime le sport, j'aimerai surtout partir pour me lancer dans des activités à sensations fortes mais j'aimerai bien geeker parfois aussi.",
-  picture: "charles.jpeg")
+  picture: "charles.jpg")
 user8 = User.create!(email: "thomas@gmail.com",
   password: "totototo",
   first_name: "Thomas",
