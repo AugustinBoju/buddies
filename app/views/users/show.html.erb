@@ -7,7 +7,7 @@
   <div class="user-card">
     <br>
     <h3> Description </h3>
-  <p><%= @user.interests %></p>
+  <p><%= @user.interests.pluck(:name).join(', ') %></p>
    <p><%= @user.description %></p>
     <br>
 
