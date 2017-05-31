@@ -10,8 +10,12 @@
         <%= "- #{request.status.to_s} -" %>
       </span>
     <% end %>
+
     <% if request.accepted? %>
       <%= link_to "Chat video", request_path(request) %>
     <% end %>
+  <% end %>
+  <% if request.accepted? %>
+      <%= link_to "Chat video", request_path(request) %>
   <% end %>
 <% end %>

@@ -16,12 +16,12 @@
     </form>
 
     <!-- Different navigation if login or not -->
-    <%= link_to t(".top_call_to_action", default: "Dashboard"), requests_path, class: "btn btn-danger" %>
+    <%= link_to t(".top_call_to_action", default: "Dashboard"), requests_path, class: "btn btn-info" %>
     <% if user_signed_in? %>
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "login.jpeg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag "login.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to edit_user_registration_path do %>

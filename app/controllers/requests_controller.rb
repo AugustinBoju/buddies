@@ -9,7 +9,12 @@ class RequestsController < ApplicationController
     @user = User.find(params[:user_id])
     @request = Request.new(sender: sender, receiver: @user)
     if @request.save
-      # TODO: send sms to @user
+      @client = Twilio::REST::Client.new
+      @client.messages.create(
+        from: '+33644601654',
+        to: @user.phone,
+        body: '👫🌎✈TRAVEL CRUSH - You have been invited to discuss of your next travel with a new buddy!'
+      )
       redirect_to requests_path
     else
       render "users/show"
@@ -23,6 +28,9 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @conversation = Conversation.between(@request.sender, @request.receiver).first
+    @messages = @conversation.messages
+    @new_message = @conversation.messages.build
   end
 
   def to_s
@@ -33,11 +41,16 @@ class RequestsController < ApplicationController
     #find request
     @request = Request.find(params[:id])
     #update status
-
     @request.update(requests_params)
 
     if @request.accepted?
       # TODO: send sms to @request.sender
+      @client = Twilio::REST::Client.new
+      @client.messages.create(
+        from: '+33644601654',
+        to: @request.sender.phone,
+        body: '👫🌎✈TRAVEL CRUSH - Check your dashboard, you have a new travel crush!'
+      )
     end
 
     #redirect request index
