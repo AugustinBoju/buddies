@@ -1,17 +1,11 @@
-
-
-
 <div class="user-index-container">
-
   <div class="user-index-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'background.jpg' %>);">
-
     <div class="banner-content">
       <h1>Discover your travel crushs</h1>
-      <span class=""><kbd>I love:</kbd> <%= "#{@interests.pluck(:name).join(', ').downcase}"%></span>
+      <p class=""><kbd>I love:</kbd> <%= "#{@interests.pluck(:name).join(', ').downcase}"%></p>
       <br>
       <p><%= link_to 'Edit interests', root_path%></p>
     </div>
-
   </div>
 
   <div class="user-index-bottom">
@@ -30,7 +24,6 @@
       <div id="map"></div>
     </div>
   </div>
-
 </div>
 
 <% content_for(:after_js) do %>

@@ -1,9 +1,13 @@
 .avatar {
-  width: 30px;
+  width: 136px;
   border-radius: 50%;
+  position: absolute;
+  top: 125px;
+  left: calc(50% - 68px);
+  border: 5px solid #FFE24F;
 }
 .avatar-large {
-  width: 50;
+  width: 150px;
   border-radius: 50%;
 }
 .avatar-bordered {
