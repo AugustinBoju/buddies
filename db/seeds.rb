@@ -2,9 +2,9 @@ puts 'Cleaning database'
 Request.destroy_all
 UserInterest.destroy_all
 Interest.destroy_all
-User.destroy_all
-Message.destroy_all
 Conversation.destroy_all
+User.destroy_all
+
 
 puts 'Cleaning database done'
 puts 'Creating users'

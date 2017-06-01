@@ -1,32 +1,36 @@
-<div class="container">
   <% if @over_ten %>
     <%= link_to 'Show Previous', '?m=all' %>
   <% end %>
-  <div class="ui segment">
+  <div class="message-box">
     <% @messages.each do |message| %>
       <% if message.body %>
-        <div class="item">
           <div class="content">
-            <div class="header"><strong><%= message.user.first_name %></strong>     <%= message.message_time %></div>
-              <div class="list">
-                <div class="item">
-                  <i class="right triangle icon"></i>
+              <% if message.user != current_user %>
+                <div class="receiver">
+                  <div class="user-img">
+                    <%= image_tag message.user.picture %>
+                    <strong>
+                      <%= message.user.first_name %>
+                    </strong><%= message.message_time %>
+                  </div>
+                </div>
+                <div class="item-receive">
                   <%= message.body %>
                 </div>
-              </div>
+
+              <% else %>
+
+                <div class="sender">
+                  <div class="user-img">
+                    <%= image_tag message.user.picture %>
+                    <strong>Me</strong> <%= message.message_time %>
+                  </div>
+                </div>
+                <div class="item-send">
+                  <%= message.body %>
+                </div>
+              <% end %>
             </div>
-        </div>
       <% end %>
     <% end %>
   </div>
-  <br>
-  <%= form_for [@conversation, @new_message], remote: true, html: {class: "ui reply form"} do |f| %>
-    <div class="field">
-     <%= f.text_area :body, class: "form-control" %>
-    </div>
-    <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
-    <div>
-      <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
-    </div>
-  <% end %>
-</div>

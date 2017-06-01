@@ -1,12 +1,28 @@
-<iframe src="https://appear.in/travel-crush"<%= @request.receiver_id %>-<%= @request.sender_id %> width="800" height="640" frameborder="0"></iframe>
-
-<div class="container">
-  <% if @over_ten %>
-    <%= link_to 'Show Previous', '?m=all' %>
-  <% end %>
-  <div class="ui segment">
-    <div class="messages_container">
-      <%= render 'messages/index'  %>
-    </div>
+<div class="user-index-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'background.jpg' %>); height: 250px;">
+  <div class="banner-content">
+    <h1>Talk with your crush</h1>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="video">
+      <iframe src="https://appear.in/travel-crush"<%= @request.receiver_id %>-<%= @request.sender_id %> width="600" height="500"></iframe>
+    </div>
+    <div class="banner-content">
+      <h2>Enter room to call your crush or text him</h2>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-md-6">
+    <div class="message">
+        <% if @over_ten %>
+          <%= link_to 'Show Previous', '?m=all' %>
+        <% end %>
+        <%= render 'messages/index'  %>
+    </div>
+    <br>
+    <%= render 'messages/form' %>
+  </div>
+</div>
+
