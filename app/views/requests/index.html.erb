@@ -3,10 +3,10 @@
     <div class="text-center">
       <!-- <h1>Hello <%= current_user.first_name %></h1> -->
       <div class="requests-filter col-xs-12 col-sm-6 col-sm-offset-3">
-        <h1>My Requests</h1>
+        <h1>Hello <%= @user.first_name %> 👋😜</h1>
         <div class="tabs" role="tablist">
           <a class="tab active nav-link" href="#pending" data-toggle="tab" role="tab">
-            <h3><%= @user.sent_requests.pending.count %></h3>
+            <h3><%= @user.sent_requests.pending.count + @user.received_requests.pending.count %></h3>
             <p>Pending</p>
           </a>
           <a class="tab nav-link" href="#accepted" data-toggle="tab" role="tab">
@@ -19,29 +19,32 @@
           </a>
         </div>
         <div class="tab-content">
+
+
+
           <div role="tabpanel" class="tab-pane active" id="pending">
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                <%= render "requests/requests/index", requests: @user.sent_requests.pending %>
-                  </td>
-                  <td>
-                <%= render "requests/notifications/index", requests: @user.received_requests.pending %>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="accepted-flex">
+              <%= render "requests/requests/index", requests: @user.sent_requests.pending %>
+              <%= render "requests/notifications/index", requests: @user.received_requests.pending %>
+            </div>
           </div>
+
           <div role="tabpanel" class="tab-pane" id="accepted">
-            <%= render "requests/requests/index", requests: @user.sent_requests.accepted %>
-            <%= render "requests/notifications/index", requests: @user.received_requests.accepted %>
+            <div class="accepted-flex">
+              <%= render "requests/requests/index", requests: @user.sent_requests.accepted %>
+              <%= render "requests/notifications/index", requests: @user.received_requests.accepted %>
+            </div>
           </div>
+
           <div role="tabpanel" class="tab-pane" id="refused">
-            <%= render "requests/requests/index", requests: @user.sent_requests.refused %>
-            <%= render "requests/notifications/index", requests: @user.received_requests.refused %>
+            <div class="accepted-flex">
+              <%= render "requests/requests/index", requests: @user.sent_requests.refused %>
+              <%= render "requests/notifications/index", requests: @user.received_requests.refused %>
+            </div>
           </div>
+
         </div>
+
       </div>
     </div>
   </div>

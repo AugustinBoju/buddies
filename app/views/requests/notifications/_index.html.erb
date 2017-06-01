@@ -1,18 +1,28 @@
 <!-- <h3>My notifications</h3> -->
 <% requests.each do |request| %>
-  <% if request.receiver == current_user %>
-    <br>
-    <p>From <%= link_to "#{request.sender}", user_path(request.sender) %>
-    <% if request.pending? %>
-      <%= render "requests/notifications/edit", request: request %>
-    <% else %>
-      <span></p>
-        <%= "- #{request.status.to_s} -" %>
-      </span>
+<div class="test-card-requests">
+    <% if request.receiver == current_user %>
+      <div class="test-card-top" style="background-image: linear-gradient(-225deg, rgba(255, 226, 79,0.1) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path request.sender.picture %>)">
+      </div>
+      <div class="test-card-bottom">
+        <div class="align-center" style="padding-top: 60px">
+          <%= link_to "#{request.sender.first_name}, #{request.sender.age}", user_path(request.sender), class: "btn-medium btn-user-listing"  %>
+          <%= image_tag request.sender.picture, class: "test-users-avatar" %>
+          <div class="align-center">
+            <p><%= request.sender.current_city %></p>
+            <% if request.pending? %>
+              <%= render "requests/notifications/edit", request: request %>
+            <% else %>
+              <span></p>
+                <%= "- #{request.status.to_s} -" %>
+              </span>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
-
     <% if request.accepted? %>
-      <%= link_to "Chat room", request_path(request) %>
+      <%= link_to "Chat video", request_path(request) %>
     <% end %>
-  <% end %>
+  </div>
 <% end %>
