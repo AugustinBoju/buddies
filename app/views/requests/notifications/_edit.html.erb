@@ -1,8 +1,14 @@
-<%= simple_form_for request do |f| %>
-  <%= f.input :status, as: :hidden, input_html: { value: :accepted } %>
-  <%= f.submit 'accept'  %>
-<% end %>
-<%= simple_form_for request do |f| %>
-  <%= f.input :status, as: :hidden, input_html: { value: :refused } %>
-  <%= f.submit 'refuse'  %>
-<% end %>
+<div class="row">
+  <div class="col-xs-6">
+    <%= simple_form_for request do |f| %>
+      <%= f.input :status, as: :hidden, input_html: { value: :refused } %>
+      <%= f.submit 'refuse', class: 'btn btn-outline-primary btn-sm' %>
+    <% end %>
+  </div>
+  <div class="col-xs-6">
+    <%= simple_form_for request do |f| %>
+      <%= f.input :status, as: :hidden, input_html: { value: :accepted } %>
+      <%= f.submit 'accept', class: 'btn btn-outline-primary btn-sm' %>
+    <% end %>
+  </div>
+</div>

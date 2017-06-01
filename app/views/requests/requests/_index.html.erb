@@ -1,16 +1,22 @@
-<div class="user-container">
-  <!-- <h3>My Requests</h3> -->
-  <% requests.each do |request| %>
+<% requests.each do |request| %>
+  <div class="test-card-requests">
     <% if request.sender == current_user %>
-      <br>
-      <p>To <%= link_to "#{request.receiver}", user_path(request.receiver) %>
-      <span>
-          <%= "#{request.status.to_s}" %>
-      </span></p>
+      <div class="test-card-top" style="background-image: linear-gradient(-225deg, rgba(255, 226, 79,0.1) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path request.receiver.picture %>)">
+      </div>
+      <div class="test-card-bottom">
+        <div class="align-center" style="padding-top: 30px">
+          <%= link_to "#{request.receiver.first_name}, #{request.receiver.age}", user_path(request.receiver), class: "btn-medium btn-user-listing"  %>
+          <%= image_tag request.receiver.picture, class: "test-users-avatar" %>
+          <div class="align-center">
+            <p><%= request.receiver.current_city %></p>
+            <p><%= request.receiver %> has not answered yet to your request</p>
+          </div>
+        </div>
+      </div>
     <% end %>
-
     <% if request.accepted? %>
       <%= link_to "Chat video", request_path(request) %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<% end %>
+

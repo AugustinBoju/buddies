@@ -65,7 +65,28 @@
 
 .test-card {
   color:white;
-  // width : 80%;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 0.5px solid #F2F2F0;
+  border-radius: 5px;
+  margin-bottom: 30px;
+
+  p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color:black;
+    // position: absolute;
+    top: 50%;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+.test-card-requests {
+  color:white;
+  width : 49%;
   height: 230px;
   display: flex;
   flex-direction: column;
@@ -115,3 +136,30 @@
   margin-top: 15px;
   border: 2px solid #FFE24F;
 }
+
+.accepted-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
