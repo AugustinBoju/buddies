@@ -1,8 +1,12 @@
   <div class="user-index-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'background.jpg' %>);">
     <div class="banner-content">
         <div class="banner-content-text">
-        <h2><%= @user.first_name %> <%= @user.last_name %> <strong><%= @user.age %></strong></h2>
-        <p><%= @user.current_city %></p>
+          <div class="span-center">
+            <a href="https://www.facebook.com/apollinesntck"><i class="fa fa-facebook-square fa-2x" aria-hidden="true" style="color:white; margin-right:8px;"></i></a>
+            <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:white";></i></a>
+          </div>
+            <h2><%= @user.first_name %> <%= @user.last_name %> <strong><%= @user.age %></strong></h2>
+            <p><%= @user.current_city %></p>
       </div>
       <div><%= image_tag @user.picture, class: "avatar" %></div>
     </div>
@@ -25,14 +29,46 @@
     <h1> Travel stories </h1>
 
     <div class="travel-stories">
-     <div class="travel-stories-left" style="background-image: url(<%= image_path 'apo_travel.jpg' %>);">
-
+      <div class="travel-stories-left" style="background-image: url(<%= image_path 'apo_travel.jpg' %>);">
       </div>
       <div class="travel-stories-right">
-        <h2> Argentina</h2>
+        <h2><strong>Argentina</strong></h2>
         <p>Aug 1, 2016 — Oct 1, 2016</p>
+        <br>
+         <div class="buddies">
+          <% @buddies.each do |user| %>
+            <%= link_to user_path(user) do %>
+              <div class="card-buddy text-center">
+                <div><%= image_tag user.picture, class: "buddy-photo" %></div>
+                <p><%= user.first_name %> travelled with me!</p>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
       </div>
+    </div>
+<br>
+    <div class="travel-stories">
+     <div class="travel-stories-left" style="background-image: url(<%= image_path 'australia.jpg' %>);">
+      </div>
+      <div class="travel-stories-right">
+        <h2><strong> Australia</strong></h2>
+        <p>Jan 18, 2014 — Sept 3, 2014</p>
+        <br>
+        <div class="buddies">
+          <% @buddies.each do |user| %>
+            <%= link_to user_path(user) do %>
+              <div class="card-buddy text-center">
+                <div><%= image_tag user.picture, class: "buddy-photo" %></div>
+                <p><%= user.first_name %> travelled with me!</p>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div>
 
+        </div>
+      </div>
     </div>
 
     <div class="button-request">
