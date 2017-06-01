@@ -26,6 +26,7 @@
 
   h2 {
     color:white;
+    margin-top: 10px;
   }
 
   p {
@@ -86,6 +87,7 @@
   height: 100%;
   width: 60%;
   background-color: white;
+  padding: 15px;
 }
 
 
@@ -109,6 +111,14 @@
   margin-left: 5%;
 }
 
+.span-center {
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
 
 .button-request-flex {
   display: flex;
@@ -118,5 +128,21 @@
   align-items: center;
   justify-content: center;
 }
+.buddies {
+  display: flex;
+  justify-content: space-around;
+}
 
+
+.card-buddy {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.buddy-photo {
+  width: 80px;
+  border-radius: 50%;
+  border: 5px solid #FFE24F;
+}
 

@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @buddies = User.all.select{ |user| user != @user }.sample(3)
     @request = Request.new
     if user_signed_in?
       @receive_notication = Request.find_by(receiver_id: current_user.id, sender_id: @user.id)
