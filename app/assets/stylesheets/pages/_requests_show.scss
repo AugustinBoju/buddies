@@ -1,0 +1,58 @@
+
+.message {
+  margin-top: 20px;
+  margin-left: 10px;
+  width: 600px;
+  border: 2px solid #e6e6e6;
+  border-radius: 10px;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.video {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 90%;
+}
+
+.content {
+  margin-left: 10px;
+}
+
+.message-box {
+  width: 50%;
+}
+
+.user-img img{
+  width: 6%;
+  border-radius: 50%;
+}
+
+.header {
+  margin-left: 5px;
+}
+
+.item-receive {
+  border: 2px solid #e6e6e6;
+  border-radius: 10px;
+  background-color: #e6e6e6;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.item-send {
+  border: 2px solid #ffe43d;
+  border-radius: 10px;
+  background-color: #ffe43d;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  display: right;
+}
+
+.text-area {
+  width: 300px;
+}
