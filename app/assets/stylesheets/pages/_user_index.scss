@@ -7,15 +7,6 @@
   width: 100%;
 }
 
-.user-index-banner {
-  background-size: cover;
-  background-position: center center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 35%;
-  width: 100%;
-}
 
 .banner-content {
   display: flex;
@@ -29,6 +20,12 @@
   color: white;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   justify-content: center;
+  }
+
+  h2 {
+  font-weight: lighter;
+  font-size: 35px;
+  font-family: 'Montserrat', sans-serif;
   }
 
   p {
