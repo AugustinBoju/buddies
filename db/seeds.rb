@@ -24,7 +24,7 @@ user1 = User.create!(email: "apolline@gmail.com",
   phone: "+33650858793",
   age: 28,
   current_city: "Sao Paulo",
-  description: "Addict au sport, j'aime me défouler dans l'eau et / ou en rando, je recherche l'adrénaline avant tout et des compagnons de voyage dans ce même del de tarés mentaux :p",
+  description: "Addict au sport, j'aime me défouler dans l'eau et / ou en rando, je recherche l'adrénaline avant tout et des compagnons de voyage dans la même délire. Je suis plutôt proche de la nature, partante pour passer quelques jours en ville à apprécier la vie nocturne mais je suis davantage friande du grand air ! Je parle anglais et espagnol, je suis en stage de fin d'études à Rio en ce moment et je prévois de partir au mois 6 mois.",
   picture: "apo.jpg")
 user2 = User.create!(email: "augustin@gmail.com",
   password: "totototo",

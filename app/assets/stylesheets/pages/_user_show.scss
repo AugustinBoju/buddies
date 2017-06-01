@@ -1,0 +1,122 @@
+.user-index-banner {
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 100%;
+}
+
+.banner-content {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+   h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  }
+
+  h2 {
+    color:white;
+  }
+
+  p {
+  font-size: 15px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.7);
+  justify-content: center;
+  }
+}
+
+.banner-content-text {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-card {
+  margin: 10px;
+  padding-top: 75px;
+  border-radius: 3px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  padding: 60px;
+
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  i {
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+    margin: -20px 0 11px;
+    margin-bottom: 15px;
+    color: black;
+
+  }
+}
+
+.travel-stories {
+  height: 250px;
+  position: relative;
+  display: flex;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.travel-stories-left {
+  height: 100%;
+  width: 40%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.travel-stories-right {
+  height: 100%;
+  width: 60%;
+  background-color: white;
+}
+
+
+
+.img-travel-stories {
+    display: block;
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: inset 0 0 10px rgba(0,0,0,.3);
+    opacity: .3;
+}
+
+.kbd-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin-left: 5%;
+}
+
+
+.button-request-flex {
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+
