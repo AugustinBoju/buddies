@@ -9,12 +9,14 @@
         <h2 class="card-interest-name">
           <%= interest.text %>
         </h2>
+        <i class="fa fa-heart-o heart-icon fa-3x" aria-hidden="true"></i>
       </div>
     </label>
   <% end %>
   <div id="submit-interests">
-    <h1> PAPER PLANE </h1>
-    <p> WHAT DO YOU LOVE ?</p>
+    <h1> TRAVEL CRUSH </h1>
+    <p> CONNECT NOMADS </p>
+    <h2> Select what you love and be sure to travel with someone like you</h2>
     <%= f.button :submit, 'Connect nomads', class: "btn_home btn-info"%>
   </div>
   <%= f.collection_check_boxes :interest_id, Interest.all[4..7], :id, :name do |interest| %>
@@ -27,6 +29,7 @@
         <h2 class="card-interest-name">
           <%= interest.text %>
         </h2>
+        <i class="fa fa-heart-o heart-icon fa-3x" aria-hidden="true"></i>
       </div>
     </label>
   <% end %>
@@ -40,6 +43,7 @@
         <h2 class="card-interest-name">
           <%= interest.text %>
         </h2>
+        <i class="fa fa-heart-o heart-icon fa-3x" aria-hidden="true"></i>
       </div>
     </label>
   <% end %>
