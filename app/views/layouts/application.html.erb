@@ -1,8 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Travel Crush</title>
-    <link rel="shortcut icon" href="http://d1ujqdpfgkvqfi.cloudfront.net/favicon-generator/htdocs/favicons/2014-11-26/fab2d1ae216b18d63652da4f9716e20a.ico" type="image/x-icon"/>
+    <title><%= yield(:title_tag).blank? ? "Travel Crush - Connect Nomads" : yield(:title_tag) %></title>
+    <meta name="description" content="Select what you love and be sure to travel with someone like you">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="Travel Crush - Connect Nomads" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.travel-crush.world/" />
+    <meta property="og:image" content="<%= image_url 'og_image.png' %>" />
+    <meta property="og:description" content="Select what you love and be sure to travel with someone like you" />
+    <meta property="og:site_name" content="Travel Crush - Connect Nomads" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Travel Crush - Connect Nomads">
+    <meta name="twitter:description" content="Select what you love and be sure to travel with someone like you">
+    <meta name="twitter:image:src" content="<%= image_url 'og_image.png' %>">
+    <%= favicon_link_tag 'plane.ico' %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
