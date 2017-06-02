@@ -53,7 +53,7 @@ class RequestsController < ApplicationController
       # TODO: send sms to @request.sender
       @client = Twilio::REST::Client.new
       @client.messages.create(
-        from: '+33644601654',
+        from: '+33644602349',
         to: @request.sender.phone,
         body: '👫🌎✈TRAVEL CRUSH - Check your dashboard, you have a new travel crush!'
       )
