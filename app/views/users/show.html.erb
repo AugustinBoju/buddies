@@ -5,7 +5,7 @@
             <a href="https://www.facebook.com/apollinesntck"><i class="fa fa-facebook-square fa-2x" aria-hidden="true" style="color:white; margin-right:8px;"></i></a>
             <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:white";></i></a>
           </div>
-            <h2><%= @user.first_name %> <%= @user.last_name %> <strong><%= @user.age %></strong></h2>
+            <h2><%= @user.first_name %> <%= @user.last_name %>, <%= @user.age %></h2>
             <p><%= @user.current_city %></p>
       </div>
       <div><%= image_tag @user.picture, class: "avatar" %></div>
@@ -25,6 +25,23 @@
     <i><%= @user.description %></i>
     <br>
     <p class="card-text"><small class="text-muted">Updated in January 2017</small></p>
+
+    <div class="button-request">
+      <% if user_signed_in?  && @receive_notication %>
+        <div class="text-center">
+          <p>This crush is waiting for your answer</p>
+          <%= link_to "Go to dashboard", requests_path, class:'btn btn-default' %>
+        </div>
+      <% elsif user_signed_in? && @send_request %>
+        <div class="text-center">
+          <p>Already notified</p>
+          <%= link_to "Go to dashboard", requests_path, class:'btn btn-default' %>
+        </div>
+      <% else %>
+        <%= render 'requests/new', user: @user, request: @request %>
+      <% end %>
+      <br>
+    </div>
 
     <h1> Travel stories </h1>
 
@@ -70,17 +87,7 @@
         </div>
       </div>
     </div>
-
-    <div class="button-request">
-      <% if user_signed_in?  && @receive_notication %>
-        <%= render 'requests/notifications/index', requests: current_user.requests %>
-      <% elsif user_signed_in? && @send_request %>
-        <%= render 'requests/requests/index', requests: current_user.requests %>
-      <% else %>
-        <%= render 'requests/new', user: @user, request: @request %>
-      <% end %>
-      <br>
-    </div>
+    <br>
       <%= link_to "Go back", users_path, class:'btn btn-default' %>
   </div>
 

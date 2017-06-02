@@ -17,7 +17,7 @@
     <h1> TRAVEL CRUSH </h1>
     <p> CONNECT NOMADS </p>
     <h2> Select what you love and be sure to travel with someone like you</h2>
-    <%= f.button :submit, 'Connect nomads', class: "btn_home btn-info"%>
+    <%= f.button :submit, 'Explore', class: "btn_home btn-lg btn-info"%>
   </div>
   <%= f.collection_check_boxes :interest_id, Interest.all[4..7], :id, :name do |interest| %>
     <label class="card-interest-wrapper">
