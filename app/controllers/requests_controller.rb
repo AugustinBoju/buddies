@@ -11,7 +11,7 @@ class RequestsController < ApplicationController
     if @request.save
       @client = Twilio::REST::Client.new
       @client.messages.create(
-        from: '+33644601654',
+        from: '+33644602349',
         to: @user.phone,
         body: '👫🌎✈TRAVEL CRUSH - You have been invited to discuss of your next travel with a new buddy!'
       )
