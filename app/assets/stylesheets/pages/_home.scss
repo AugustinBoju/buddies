@@ -33,10 +33,8 @@
 #submit-interests {
   font-family: 'Montserrat', sans-serif;
   background: white;
-  width: 33.3vw;
+  width: 33.3333%;
   height: 250px;
-  top: 50%;
-  left: 31%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -71,8 +69,16 @@
   }
 
   .btn_home {
-  margin-bottom: 25px;
-}
+    margin-bottom: 25px;
+  }
 
 }
 
+.interests-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.interests-wrapper > span {
+  width: 33.3333%;
+}

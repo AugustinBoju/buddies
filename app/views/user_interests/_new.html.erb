@@ -1,52 +1,55 @@
 <%= simple_form_for :user_interest,  url: user_interests_path(), method: :post do |f| %>
 
 
-  <%= f.collection_check_boxes :interest_id, Interest.all[0..3], :id, :name do |interest| %>
-    <label class="card-interest-wrapper">
-      <%= interest.check_box %>
-      <%#= cl_image_url interest.object.picture.path %>
-      <div class="card-interest" style=" background-image: url(<%= set_image_for_checkbox(interest.text)%>)">
-        <h2 class="card-interest-name">
-          <%= interest.text %>
-        </h2>
-        <i class="fa fa-heart-o heart-icon fa-3x" aria-hidden="true"></i>
-      </div>
-    </label>
-  <% end %>
-  <div id="submit-interests">
-    <h1> TRAVEL CRUSH </h1>
-    <p> CONNECT NOMADS </p>
-    <h2> Select what you love and be sure to travel with someone like you</h2>
-    <%= f.button :submit, 'Explore', class: "btn_home btn-lg btn-info"%>
+  <div class="interests-wrapper">
+    <%= f.collection_check_boxes :interest_id, Interest.all[0..3], :id, :name do |interest| %>
+      <label class="card-interest-wrapper">
+        <%= interest.check_box %>
+        <%#= cl_image_url interest.object.picture.path %>
+        <div class="card-interest" style=" background-image: url(<%= set_image_for_checkbox(interest.text)%>)">
+          <h2 class="card-interest-name">
+            <%= interest.text %>
+          </h2>
+          <i class="fa fa-heart-o heart-icon fa-3x" aria-hidden="true"></i>
+        </div>
+      </label>
+    <% end %>
+
+    <div id="submit-interests">
+      <h1> TRAVEL CRUSH </h1>
+      <p> CONNECT NOMADS </p>
+      <h2> Select what you love and be sure to travel with someone like you</h2>
+      <%= f.button :submit, 'Explore', class: "btn_home btn-lg btn-info"%>
+    </div>
+    <%= f.collection_check_boxes :interest_id, Interest.all[4..7], :id, :name do |interest| %>
+      <label class="card-interest-wrapper">
+
+        <%= interest.check_box %>
+
+        <%#= cl_image_url interest.object.picture.path %>
+        <div class="card-interest" style="background-image: url(<%= set_image_for_checkbox(interest.text)%>)">
+          <h2 class="card-interest-name">
+            <%= interest.text %>
+          </h2>
+          <i class="fa fa-heart-o heart-icon fa-3x" aria-hidden="true"></i>
+        </div>
+      </label>
+    <% end %>
+    <%= f.collection_check_boxes :interest_id, Interest.all[8..10], :id, :name do |interest| %>
+      <label class="card-interest-wrapper">
+
+        <%= interest.check_box %>
+
+        <%#= cl_image_url interest.object.picture.path %>
+        <div class="card-interest" style="background-image: url(<%= set_image_for_checkbox(interest.text)%>)">
+          <h2 class="card-interest-name">
+            <%= interest.text %>
+          </h2>
+          <i class="fa fa-heart-o heart-icon fa-3x" aria-hidden="true"></i>
+        </div>
+      </label>
+    <% end %>
   </div>
-  <%= f.collection_check_boxes :interest_id, Interest.all[4..7], :id, :name do |interest| %>
-    <label class="card-interest-wrapper">
-
-      <%= interest.check_box %>
-
-      <%#= cl_image_url interest.object.picture.path %>
-      <div class="card-interest" style="background-image: url(<%= set_image_for_checkbox(interest.text)%>)">
-        <h2 class="card-interest-name">
-          <%= interest.text %>
-        </h2>
-        <i class="fa fa-heart-o heart-icon fa-3x" aria-hidden="true"></i>
-      </div>
-    </label>
-  <% end %>
-  <%= f.collection_check_boxes :interest_id, Interest.all[8..10], :id, :name do |interest| %>
-    <label class="card-interest-wrapper">
-
-      <%= interest.check_box %>
-
-      <%#= cl_image_url interest.object.picture.path %>
-      <div class="card-interest" style="background-image: url(<%= set_image_for_checkbox(interest.text)%>)">
-        <h2 class="card-interest-name">
-          <%= interest.text %>
-        </h2>
-        <i class="fa fa-heart-o heart-icon fa-3x" aria-hidden="true"></i>
-      </div>
-    </label>
-  <% end %>
 <% end %>
 
 
