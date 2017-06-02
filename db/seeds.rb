@@ -10,10 +10,10 @@ puts 'Cleaning database done'
 puts 'Creating users'
 user0 = User.create!(email: "test@test.com",
   password: "totototo",
-  first_name: "Test",
+  first_name: "David",
   last_name: "Test",
   phone: "+33650858793",
-  age: 100,
+  age: 46,
   current_city: "Bordeaux",
   description: "Une très grande envie de voyager, de découvrir de nouvelles destinations et une nouvelle culture en compagnie d'une personne simple, flexible et sociable",
   picture: "david.jpg")
