@@ -1,6 +1,4 @@
 <%= simple_form_for :user_interest,  url: user_interests_path(), method: :post do |f| %>
-
-
   <%= f.collection_check_boxes :interest_id, Interest.all[0..3], :id, :name do |interest| %>
     <label class="card-interest-wrapper">
       <%= interest.check_box %>
